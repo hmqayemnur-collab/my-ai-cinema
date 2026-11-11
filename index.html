@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#090d18"><meta name="description" content="Mobile-first Bengali cinematic video studio">
+<link rel="manifest" href="manifest.webmanifest"><link rel="stylesheet" href="style.css">
+<title>My AI Cinema</title>
+</head>
+<body>
+<header class="top"><div class="brand"><span class="logo">▶</span><div><b>MY AI CINEMA</b><small>বাংলা গল্প থেকে সিনেমাটিক ভিডিও</small></div></div><span class="tag">BETA</span></header>
+<main>
+<section class="hero"><p class="eyebrow">YOUR STORY. YOUR CINEMA.</p><h1>গল্পকে দৃশ্যে<br><em>রূপ দিন।</em></h1><p>গল্প লিখুন, দৃশ্য সাজান, ভয়েস শুনুন—সবকিছু মোবাইল থেকেই।</p></section>
+<section class="panel">
+<div class="section-head"><span class="step">01</span><div><h2>তোমার গল্প</h2><small>বাংলায় গল্প লিখুন</small></div></div>
+<textarea id="story" maxlength="2500" placeholder="যেমন: এক বাবা প্রতিদিন কাজ শেষে সন্তানের জন্য ছোট্ট একটি উপহার নিয়ে বাড়ি ফেরেন..."></textarea>
+<div class="controls"><label>ভিডিওর ধরন<select id="style"><option>Photorealistic cinematic</option><option>Emotional family drama</option><option>Islamic family story</option><option>Inspirational short film</option></select></label><label>দৈর্ঘ্য<select id="duration"><option value="30">৩০ সেকেন্ড</option><option value="45">৪৫ সেকেন্ড</option><option value="60">৬০ সেকেন্ড</option></select></label></div>
+<button class="primary" id="make">✦ দৃশ্য ও প্রম্পট তৈরি করুন</button>
+<p class="hint">এটি এখন গল্পকে দৃশ্য ও AI প্রম্পটে সাজায়। বাস্তব ভিডিও রেন্ডারের জন্য আলাদা ভিডিও API সংযোগ প্রয়োজন।</p>
+</section>
+<section class="panel" id="scenePanel" hidden>
+<div class="section-head"><span class="step">02</span><div><h2>তোমার দৃশ্যগুলো</h2><small>একই চরিত্র ধরে রাখার নির্দেশনাসহ</small></div></div>
+<div id="scenes"></div>
+<div class="actions"><button class="secondary" id="copyAll">সব প্রম্পট কপি</button><button class="secondary" id="downloadScript">স্ক্রিপ্ট ডাউনলোড</button></div>
+</section>
+<section class="panel">
+<div class="section-head"><span class="step">03</span><div><h2>বাংলা ভয়েস প্রিভিউ</h2><small>তোমার ডিভাইসের Text-to-Speech ব্যবহার করবে</small></div></div>
+<textarea id="voiceText" placeholder="এখানে ভয়েসওভারের লেখা দিন..."></textarea>
+<div class="actions"><button class="secondary" id="speak">▶ ভয়েস শুনুন</button><button class="secondary" id="stop">■ বন্ধ</button></div>
+<p class="hint">বাংলা ভয়েস না থাকলে Android-এর Text-to-Speech সেটিংসে বাংলা ভাষা যোগ করুন।</p>
+</section>
+<section class="panel">
+<div class="section-head"><span class="step">04</span><div><h2>ভিডিও প্রিভিউ</h2><small>জেনারেট করা ভিডিওর লিংক বসান</small></div></div>
+<div class="preview" id="preview"><div class="play">▶</div><p>9:16 ভিডিও প্রিভিউ</p><small>ভিডিও API যুক্ত হলে এখানে ফলাফল দেখাবে</small></div>
+<input id="videoUrl" type="url" placeholder="ভিডিও ফাইলের HTTPS URL (ঐচ্ছিক)">
+<button class="secondary full" id="loadVideo">ভিডিও লোড করুন</button>
+<video id="video" controls playsinline hidden></video>
+</section>
+<footer>My AI Cinema · Mobile-first PWA <br><small>API key কখনো এই পেজের কোডে লিখবেন না।</small></footer>
+</main>
+<script src="app.js"></script>
+</body></html>
